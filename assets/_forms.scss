@@ -1,0 +1,87 @@
+@import "assets/vars";
+
+input {
+  border: none;
+  border-bottom: 1px solid $black-4;
+  width: 100%;
+  height: 30px;
+  background: transparent;
+  text-indent: 4px;
+  line-height: 30px;
+  outline: none;
+
+  &:focus {
+    outline: initial;
+  }
+}
+textarea {
+  background: transparent;
+  outline: none;
+  border: 1px solid $black-4;
+  min-height: 100px;
+  width: 100%;
+  resize: vertical;
+  font-size: 1em;
+  font-family: monospace;
+  padding: 10px;
+}
+input.radio[type=radio] {
+  display: none;
+
+  &:selected + label {
+
+  }
+}
+.rows {
+  display: table;
+  width: 100%;
+  padding: 0 14px;
+
+  &.hover {
+    .row:hover {
+      cursor: pointer;
+      background: $accent-1-light;
+    }
+  }
+  &.dividers {
+    border-top: 1px solid $black-4;
+
+    .row > * {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: $black-4;
+      }
+    }
+  }
+
+  .row {
+    display: table-row;
+    min-height: 54px;
+    line-height: 40px;
+    width: 100%;
+
+    & > * {
+      padding: 0 14px 14px 14px;
+      display: table-cell;
+      vertical-align: top;
+    }
+    .key {
+      color: $text-dark-2;
+      font-size: 1.1em;
+    }
+    .value {
+      width: 99%;
+
+      a {
+        color: $accent-1;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "assets/vars";
+
+.btn {
+  display: inline-block;
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 24px;
+  margin: 7px 0;
+  background: $accent-1;
+  color: white;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  box-shadow: $shadow-1;
+  transition: background .15s $transition,
+              box-shadow .15s $transition,
+              color .15s $transition;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  &:focus {
+    outline: initial;
+  }
+  &:hover {
+    box-shadow: $shadow-3;
+  }
+  &:active {
+    box-shadow: $shadow-2;
+  }
+  &:disabled {
+    background: $black-5;
+    color: $black-3;
+    pointer-events: none;
+  }
+  &.btn-with-icon {
+    padding: 0 20px 0 0;
+  }
+  &.btn-clear {
+    background: transparent;
+    color: $text-dark-1;
+    box-shadow: none;
+    padding: 0 14px;
+
+    &:hover {
+      background: adjust-color($accent-1, $alpha: -0.8);
+      color: $text-dark-1;
+    }
+
+    &:active,
+    &.active {
+      background: adjust-color($accent-1, $alpha: -0.6);
+    }
+  }
+}

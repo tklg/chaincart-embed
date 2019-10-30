@@ -3,14 +3,10 @@
 @import "assets/table";
 
 .ccart-cart {
-  box-shadow: $shadow-1;
-  background: white;
-  display: block;
   display: flex;
   flex-direction: column;
-
-  width: 700px;
-  height: 400px;
+  height: 100%;
+  width: 100%;
 
   header {
     flex: none;
@@ -61,7 +57,7 @@
     line-height: 40px;
     display: flex;
 
-    .total {
+    .expand {
       flex: 1;
     }
     button {

@@ -1,0 +1,176 @@
+@import "assets/vars";
+@import "assets/forms";
+
+.ccart-checkout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  header {
+    flex: none;
+    padding: 0 28px 0 14px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+
+    svg {
+      height: 30px;
+      width: 30px;
+      margin: 10px 14px 10px 0;
+      flex: none;
+      cursor: pointer;
+
+      path {
+        fill: $text-dark-2;
+      }
+    }
+    span {
+      flex: 1;
+    }
+    .total {
+      flex: none;
+      font-size: 1.2em;
+    }
+  }
+  main {
+    flex: 1;
+    padding: 14px 28px;
+    width: 100%;
+    display: flex;
+
+    @include break('xsmall') {
+      flex-direction: column;
+    }
+
+    p {
+      margin: 14px 0 0 0;
+
+      & ~ p {
+        margin: 28px 0 0 0;
+      }
+    }
+    .ccart-form {
+      flex: 1;
+      max-width: 320px;
+      width: 100%;
+      padding: 0 14px 0 0;
+      border-right: 1px solid $black-4;
+
+      @include break('xsmall') {
+        border: none;
+        flex: none;
+      }
+
+      .StripeElement {
+        max-width: 320px;
+        margin: 10px 0 10px 0;
+        padding: 0 0 4px 0;
+        height: 24px;
+        border-bottom: 1px solid $black-4;
+      }
+
+      .ccart-width-limit {
+        display: flex;
+
+        input {
+          flex: 1
+        }
+
+        button {
+          height: 30px;
+          line-height: 30px;
+          margin-left: 14px;
+        }
+      }
+      .ccart-error {
+        color: $red;
+      }
+    }
+    .ccart-discounts {
+      padding: 0 14px 14px 14px;
+      flex: 0.6;
+
+      @include break('xsmall') {
+        padding: 14px 14px 14px 0;
+      }
+
+      ul {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        min-height: 100px;
+
+        &:empty:after {
+          content: 'None redeemed';
+          color: $text-dark-2;
+          position: absolute;
+          top: 14px;
+          left: 0;
+          font-size: 10pt;
+        }
+
+        li {
+          height: 30px;
+          line-height: 30px;
+          border-bottom: 1px solid $black-4;
+          display: flex;
+
+          &:last-of-type {
+            border: none;
+          }
+
+          [data-cc-key] {
+            flex: 1;
+          }
+          [data-cc-value] {
+            color: $green;
+          }
+        }
+      }
+      .total {
+        text-align: right;
+      }
+    }
+  }
+  footer {
+    flex: none;
+    padding: 0 28px;
+    height: 68px;
+    line-height: 40px;
+    display: flex;
+
+    .expand {
+      flex: 1;
+    }
+    .secure {
+      color: $text-dark-2;
+      font-size: 0.8em;
+      line-height: 12pt;
+    }
+    button {
+      flex: 0;
+    }
+  }
+  button {
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    background: $accent-1;
+    color: $text-light-1;
+    text-transform: uppercase;
+    box-shadow: $shadow-2;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    transition: .15s box-shadow $transition;
+
+    &:hover {
+      box-shadow: $shadow-3;
+    }
+    &:active {
+      box-shadow: $shadow-1;
+    }
+  }
+}

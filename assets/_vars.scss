@@ -50,11 +50,13 @@ $red: #c64349;
 $yellow: #fdfaa2;
 $green: #76DB37;
 
+$xsmall-break: 500px;
 $small-break: 640px;
 $medium-break: 910px;
 $large-break: 1200px;
 
 $breakpoints: (
+  'xsmall':  ( max-width: $xsmall-break ),
   'small':  ( max-width: $small-break ),
   'medium': ( max-width:  $medium-break ),
   'large':  ( max-width: $large-break )

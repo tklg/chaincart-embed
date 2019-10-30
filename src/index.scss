@@ -11,7 +11,7 @@
   opacity: 0;
   transition: .15s opacity $transition;
 
-  .ccart-cart {
+  .ccart-modal {
     opacity: 0;
     // margin-top: 100px;
     transition: .15s opacity $transition,
@@ -23,7 +23,7 @@
     background: $black-3;
     opacity: 1;
 
-    .ccart-cart {
+    .ccart-modal {
       margin: 0;
       opacity: 1;
     }
@@ -44,5 +44,15 @@
     height: 40px;
     text-align: center;
     cursor: pointer;
+
+    @include break('small') {
+      top: 14px;
+      right: 14px;
+      color: $text-dark-1;
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+    }
   }
 }

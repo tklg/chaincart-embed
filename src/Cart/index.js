@@ -1,9 +1,6 @@
 import React from 'react'
 import './index.scss'
-
-const fmt = (n) => {
-  return `$${(n / 100).toFixed(2)}`
-}
+import { money } from '../util'
 
 export default class Cart extends React.Component {
   renderRow = (x, i, a) => {
@@ -14,7 +11,7 @@ export default class Cart extends React.Component {
         <td>
           <input type='number' min='0' step='1' value={x.count} onChange={e => this.props.setCount(x.id, e.target.value)} />
         </td>
-        <td>{fmt(x.price)}</td>
+        <td>{money.fmt(x.price)}</td>
         <td><span className='remove' onClick={e => this.props.removeItem(x.id)}>Remove</span></td>
       </tr>
     )
@@ -45,8 +42,8 @@ export default class Cart extends React.Component {
             ) : <div className='table-empty'>Cart is empty</div>}
         </main>
         <footer>
-          <div className='total'><span>Total:</span><span className='value'>{fmt(total)}</span></div>
-          <button>Checkout</button>
+          <div className='expand total'><span>Total:</span><span className='value'>{money.fmt(total)}</span></div>
+          <button onClick={this.props.onCheckout}>Checkout</button>
         </footer>
       </div>
     )
